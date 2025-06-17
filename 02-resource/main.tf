@@ -7,3 +7,4 @@ resource "aws_instance" "test_instance" {
     Name = "my-test-instance"
   }
 }
+
