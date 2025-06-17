@@ -4,5 +4,5 @@ data "aws_instances" "test" {
   }
 }
 output "print_id" {
-  value = data.aws_instances.test.public_ips
+  value = data.aws_instances.test
 }
