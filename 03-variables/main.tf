@@ -4,3 +4,10 @@ variable "var1" {
 output "var1_print" {
   value = var.var1
 }
+
+variable "var_list" {
+  default = [1,"string",true]
+}
+output "var_list" {
+  value = var.var_list[2]
+}
