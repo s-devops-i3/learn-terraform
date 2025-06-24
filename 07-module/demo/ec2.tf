@@ -7,3 +7,6 @@ resource "aws_instance" "instance" {
   }
 }
 
+output "aws-inst" {
+  value = aws_instance.instance.private_ip
+}
