@@ -3,17 +3,23 @@ resource "aws_instance" "instance" {
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-08f41a3b66746e56a"]
 
-  connection {
-    type = "ssh"
-    user = "ec2-user"
-    password = "DevOps321"
-    host = self.public_ip
-  }
-
   provisioner "remote-exec" {
-    inline = [
 
-      "echo Hello welcome to provisioners",
+    connection {
+      type = "ssh"
+      user = "ec2-user"
+      password = "DevOps321"
+      host = self.public_ip
+    }
+
+    inline = [
+      "sudo dnf intall nginx -y",
+      "sudo systemctl start nginx"
     ]
   }
+
+
+
+
+
 }
